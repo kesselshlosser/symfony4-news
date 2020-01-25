@@ -1,0 +1,16 @@
+# docker
+docker/config/nginx/default.conf
+docker/log/
+
+# phpstorm project files
+.idea
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###

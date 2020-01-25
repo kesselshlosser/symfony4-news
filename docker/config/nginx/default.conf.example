@@ -1,0 +1,25 @@
+    server {
+        charset utf-8;
+        client_max_body_size 64M;
+
+        listen 80; ## listen for ipv4
+
+        server_name symfony4-news-develop;
+        root        /var/www/symfony4-news/public;
+        index       index.php;
+
+        location / {
+            try_files $uri $uri/ /index.php$is_args$args;
+        }
+
+        location ~ \.php$ {
+            include fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            fastcgi_pass php-fpm:9000;
+            try_files $uri =404;
+        }
+
+        location ~* /\. {
+            deny all;
+        }
+    }
