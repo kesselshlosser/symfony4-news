@@ -7,5 +7,6 @@
 1. В docker/config/nginx создать default.conf;
 2. В корне кодовой базы выполнить команду `docker-compose up -d --build`;
 3. Перейти в контейнер php `docker-compose exec php-fpm sh`;
-4. Выполнить комманду:
+4. Выполнить комманды:
     1. `composer install`;
+    2. `php bin/console assets:install`.
