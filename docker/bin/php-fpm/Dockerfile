@@ -6,12 +6,15 @@ RUN apk add --no-cache \
     unzip \
     libzip-dev \
     libpng \
-    libpng-dev
+    libpng-dev \
+    postgresql-dev
 
 RUN docker-php-ext-install \
     zip\
     gd \
-    pdo_mysql
+    pdo \
+    pdo_mysql \
+    pdo_pgsql
 
 RUN apk del libpng-dev
 

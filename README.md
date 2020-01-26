@@ -9,4 +9,6 @@
 3. Перейти в контейнер php `docker-compose exec php-fpm sh`;
 4. Выполнить комманды:
     1. `composer install`;
-    2. `php bin/console assets:install`.
+    2. `bin/console acl:init`;
+    3. `bin/console doctrine:schema:update --force`.
+5. Создать суперпользователя командой `bin/console fos:user:create --super-admin`, после нее `bin/console sonata:admin:setup-acl`.
